@@ -7,12 +7,12 @@
             <ul class="breadcrumb">
                 <li>
                     <i class="fa fa-home"></i>
-                    <a href="#">SystemAdministrator</a>
+                    <a href="#">Branch Agent   {{$BranchName}}</a>
                 </li>
                 <li>
-                    <a href="#">Users</a>
+                    <a href="#">Appointment</a>
                 </li>
-                <li class="active">Create New User</li>
+                <li class="active">create new  Appointment</li>
             </ul>
         </div>
         <!-- /Page Breadcrumb -->
@@ -22,10 +22,10 @@
                 <h1>
 
 
-                    Users
+                    Appointment
                     <small>
                         <i class="fa fa-angle-right"></i>
-                        Create New User
+                        create a Appointment
                     </small>
                 </h1>
             </div>
@@ -46,7 +46,7 @@
         <!-- /Page Header -->
         <!-- Page Body -->
         <div class="page-body">
-            <h5 class="row-title"><i class="typcn typcn-th-small"></i>{{ trans('messages.registration') }}</h5>
+            <h5 class="row-title"><i class="typcn typcn-th-small"></i>{{trans('messages.Create_ticket')}}</h5>
             <div class="row">
 
 
@@ -55,23 +55,19 @@
                         <div class="col-lg-6 col-sm-6 col-xs-12">
                             <div class="widget flat radius-bordered">
                                 <div class="widget-header bg-blue">
-                                    <span class="widget-caption">{{ trans('messages.Create_Users') }} </span>
+                                    <span class="widget-caption">{{ trans('messages.ticket_form') }} </span>
                                 </div>
                                 <div class="widget-body">
                                     <div id="registration-form">
-                                        <form role="form" method="post" id="cc" action="{{url('SystemAdministrator/StoreUser')}}">
+                                        <form role="form" method="post" id="cc" action="{{url('Branch/StoreAppointment')}}">
                                             @csrf
                                             <div class="form-title">
-                                                User Information
+                                                {{ trans('messages.ticket_information') }}
                                             </div>
 
 
-
                                             <div class="form-group">
-                                                <span class="input-icon icon-right">
-                                                    <input type="text" class="form-control" name="userameInput" id="userameInput" placeholder="Username">
-                                                    <i class="glyphicon glyphicon-user circular"></i>
-                                                </span>
+                                               
                                             </div>
 
 
@@ -79,41 +75,20 @@
 
                                             <div class="form-group">
                                                 <span class="input-icon icon-right">
-                                                    <input type="text" class="form-control"  name="emailInput" id="emailInput" placeholder="Email Address">
-                                                    <i class="fa fa-envelope-o circular"></i>
+                                                    <input type="text" class="form-control" name="Count" id="userameInput" placeholder="عدد الحجوزات">
+                
                                                 </span>
                                             </div>
 
-
-
-
-
-                                            <div class="form-group">
-                                                <span class="input-icon icon-right">
-                                                    <input type="password" class="form-control"  name="passwordInput" id="passwordInput" placeholder="Password">
-                                                    <i class="fa fa-lock circular"></i>
-                                                </span>
+                                         <div class="form-group">
+                                            <input  type="date"  class="form-control" name="Requset_date"  required>
                                             </div>
-
-
-
-                                            <div class="form-group">
-                                                <select class="form-control Roles" name="branch">
-                                                    @foreach($Roles as $Role)
-                                                        <option value="{{$Role->id}}">{{$Role->branches_name}}</option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-
-
-        
 
 
                                             <hr class="wide"/>
                                             <button  type="submit"  class="btn btn-blue">{{ trans('messages.Save') }}</button>
-                                            </form>
+                                        </form>
                                     </div>
-
 
                                 </div>
                             </div>
@@ -129,17 +104,7 @@
     <script>
         $(document).ready(function () {
             // this is for get a way  department
-            $('.Roles').select2({
-                placeholder: 'اختر الفرع'
-            });
-
-
-
-           
-
-
-           
-
+        
 
             //  $("#myForm").submit();
 
@@ -155,26 +120,29 @@
                     url: frm.attr('action'),
                     data: frm.serialize(),
                     success: function (data) {
-                     //   console.log('Submission was successful.');
-                      //  console.log(data);
+                        console.log('Submission was successful.');
 
-
-                            Swal.fire(
+                        Swal.fire(
                             '{{ trans('messages.success') }}',
-            
+                            '{{ trans('messages.ticket_created') }}',
                             'success'
                         );
+
+
+                        console.log(data);
                     },
                     error: function (data) {
-                       // console.log('An error occurred.');
-                      //  console.log(data);
-                        alert("there is error in feilds");
+                        Swal.fire(
+                            'fail',
+                            'please fill all field',
+                            'fail'
+                        );
                     },
                 });
 
 
 
-        });
+            });
         });
     </script>
 @endsection

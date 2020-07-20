@@ -1,10 +1,26 @@
 @extends('layouts.ThemeSource.Header')
 @section('content')
         <!-- Page Content -->
+
         <div class="login-container animated fadeInDown">
+
+
+                        <small>
+                        <img src="{{asset("assets/img/logotext.png")}}" class="img-responseive" alt="" />
+                        </small>
+
+                        <br>
+                        <br>
+
             <div class="loginbox bg-white">
+
+          
+
+
                 <div class="loginbox-title">نظام حجز الطلبات</div>
 
+
+                        
 
 
                 @if(Session::has('message'))
@@ -41,7 +57,7 @@
                         <div class="loginbox-textbox">
                                                 <select class="form-control Bracnhes" name="Bracnhes">
                                                 @foreach($Baranchers as $Barancher)
-                                                <option value="{{$Barancher->branches_id}}">{{$Barancher->branches_name}}</option>
+                                                <option value="{{$Barancher->id}}">{{$Barancher->branches_name}}</option>
                                                 @endforeach
                                                 </select>
                                            

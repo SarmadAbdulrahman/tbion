@@ -2,8 +2,18 @@
 @section('content')
         <!-- Page Content -->
         <div class="login-container animated fadeInDown">
+
+
+            <small>
+                        <img src="{{asset("assets/img/logotext.png")}}" class="img-responseive" alt="" />
+                        </small>
+
+                        <br>
+                        <br>
+
+
             <div class="loginbox bg-white">
-                <div class="loginbox-title">Sign In</div>
+                <div class="loginbox-title">تسجيل دخول</div>
 
 
                 <form method="POST" action="{{ route('login') }}">

@@ -108,10 +108,13 @@ Route::group(['prefix'=>'ClientAgent','middleware' => ['role:ClientAgent']], fun
 
 
 Route::group(['prefix'=>'Branch','middleware' => ['role:Branch']], function () {
-  
+  // Createappointment  StoreAppointment  Showappointment
 
 
     Route::get('/','Branch\BranchController@index');
+    Route::get('/Createappointment','Branch\BranchController@Createappointment');
+    Route::post('/StoreAppointment','Branch\BranchController@StoreAppointment');
+    Route::get('/Showappointment','Branch\BranchController@Showappointment');
 
 
 });

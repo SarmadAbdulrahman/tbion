@@ -23,7 +23,7 @@
                   Barnch Agent
                     <small>
                         <i class="fa fa-angle-right"></i>
-                        Barnch
+                        {{$BranchName}}
                     </small>
                 </h1>
             </div>

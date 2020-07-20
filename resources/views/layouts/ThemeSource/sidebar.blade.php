@@ -14,10 +14,10 @@
     <div class="navbar-inner">
         <div class="navbar-container">
             <!-- Navbar Barnd -->
-            <div class="navbar-header pull-left">
+            <div class="navbar-header pull-center">
                 <a href="#" class="navbar-brand">
                     <small>
-                        <img src="{{asset("assets/img/logo.png")}}" alt="" />
+                        <img src="{{asset("assets/img/logotext.png")}}" alt="" />
                     </small>
                 </a>
             </div>
@@ -104,50 +104,15 @@
                             </a>
                         </li>
 
-                        <li>
-                            <a href="{{url('SystemAdministrator/changeUserRole')}}">
-                                <span class="menu-text">Change User Role</span>
-                            </a>
-                        </li>
+                        
 
 
-                        <li>
-                            <a href="{{url('SystemAdministrator/AssignDepartmentAdmin')}}">
-                                <span class="menu-text">Assign Department Admin </span>
-                            </a>
-                        </li>
+                     
 
 
 
                     </ul>
                 </li>
-
-                    <li>
-                    <a href="#" class="menu-dropdown">
-                        <i class="menu-icon fa fa-file-excel-o"></i>
-                        <span class="menu-text">Reports</span>
-                        <i class="menu-expand"></i>
-                    </a>
-
-                    <ul class="submenu">
-
-                        <li>
-                            <a href="{{url('SystemAdministrator/rTasks')}}">
-                                <span class="menu-text">Tasks</span>
-                            </a>
-                        </li>
-
-
-
-                   
-
-
-                    </ul>
-                </li>
-
-
-
-
 
                 @endrole
 
@@ -177,6 +142,37 @@
                     </ul>
                 </li>
                 @endrole()
+
+
+
+
+                   @role('Branch')
+                <li>
+                    <a href="#" class="menu-dropdown">
+                        <i class="menu-icon fa fa-delicious"></i>
+                        <span class="menu-text"> appointment  Management </span>
+                        <i class="menu-expand"></i>
+                    </a>
+
+                    <ul class="submenu">
+
+                        <li>
+                            <a href="{{url('Branch/Createappointment')}}">
+                                <span class="menu-text">Create appointment</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{url('Branch/Showappointment')}}">
+                                <span class="menu-text">Show appointment</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+                @endrole()
+
+
 
 
 

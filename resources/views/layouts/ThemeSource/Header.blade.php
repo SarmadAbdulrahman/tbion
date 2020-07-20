@@ -7,13 +7,13 @@ IW this is project for  Ticket System
 <!-- Head -->
 <head>
     <meta charset="utf-8" />
-    <title>Ticket System | Task Manager</title>
+    <title>appointment System | Task Manager</title>
 
     <meta name="description" content="Dashboard" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="shortcut icon" href="{{asset("/assets/img/favicon.png")}}" type="image/x-icon">
+   
 
     <!--Basic Styles-->
     <link   href="{{asset("assets/css/bootstrap.min.css")}}" rel="stylesheet"   />

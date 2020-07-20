@@ -11,6 +11,8 @@ use Spatie\Permission\Models\Role;
 use Validator;
 use App\Manager;
 use App\Ticket;
+use App\Branch;
+// Branch
 
 class AdminController extends Controller
 {
@@ -42,7 +44,7 @@ class AdminController extends Controller
     public function create()
     {
 
-        $Roles=Role::all();
+        $Roles=Branch::all();
         $departments=Department::all();
         app()->setLocale(Session::get('locale'));
         $InformationArray=Array(
@@ -71,37 +73,20 @@ class AdminController extends Controller
 
         // this is new way of beer  Role
        $user= User::create([
-             'name'=>$request['userameInput']
+             'name'=>$request['userameInput'],
+             'branches_id'=>$request['branch']
             , 'email'=>$request['emailInput']
             , 'password'=>Hash::make($request['passwordInput'])
         ]);
 
 
 
-        $user->assignRole(Role::find($request["Role"]));
+        $user->assignRole(2);
 
-        if($request["Role"]==3){
-            $d=Department::find($request["Department"]);
-            $d->user_id=$user->id;
-            $d->save();
-
-        }
+      
 
 
-        if($request["Role"]==5){
-            
-            Manager::Create([
-                "emp_id"=>$user->id,
-                "manager_id"=>$request["Department"]
-            ]);
-
-        }
-
-
-
-
-
-
+      
         return response()->json(['status'=>'success'],200);
 
     }
