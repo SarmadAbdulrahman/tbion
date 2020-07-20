@@ -7,7 +7,7 @@
 
 <!--Beyond Scripts-->
 <script src="{{asset("assets/js/beyond.js")}}"></script>
-
+<script src="{{asset("assets/js/bootstrap-datepicker.min.js")}}"></script>
 
 <!--Page Related Scripts-->
 <!--Sparkline Charts Needed Scripts-->

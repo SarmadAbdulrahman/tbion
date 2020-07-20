@@ -19,8 +19,13 @@ IW this is project for  Ticket System
     <link   href="{{asset("assets/css/bootstrap.min.css")}}" rel="stylesheet"   />
     <link   href="{{asset("assets/css/font-awesome.min.css")}}"  rel="stylesheet"  />
     <link   href="{{asset("assets/css/weather-icons.min.css")}}" rel="stylesheet"   />
+
+      <link   href="{{asset("assets/css/bootstrap-datepicker.css")}}" rel="stylesheet"   />
     <!--Fonts-->
-  
+    <link   href="{{asset("assets/css/bootstrap-datepicker.standalone.css")}}" rel="stylesheet"   />
+    <link   href="{{asset("assets/css/bootstrap-datepicker.standalone.css.map")}}" rel="stylesheet"   />
+    <link   href="{{asset("assets/css/bootstrap-datepicker.standalone.min.css")}}" rel="stylesheet"   />
+    <link   href="{{asset("assets/css/bootstrap-datepicker3.css")}}" rel="stylesheet"   />
     <!--Beyond styles-->
     <link   href="{{asset("assets/css/beyond.min.css")}}" rel="stylesheet"  type="text/css"/>
     <link   href="{{asset("assets/css/demo.min.css")}}"  rel="stylesheet" />

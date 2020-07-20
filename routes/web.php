@@ -81,7 +81,7 @@ Route::group(['prefix'=>'SystemAdministrator','middleware' => ['role:SystemAdmin
 | this is for ClientAgent of the system
 |
 |
-|   ClientAgent
+|   ClientAgent   Branch
 |
 */
 
@@ -103,6 +103,18 @@ Route::group(['prefix'=>'ClientAgent','middleware' => ['role:ClientAgent']], fun
 });
 
 
+
+
+
+
+Route::group(['prefix'=>'Branch','middleware' => ['role:Branch']], function () {
+  
+
+
+    Route::get('/','Branch\BranchController@index');
+
+
+});
 
 
 /*

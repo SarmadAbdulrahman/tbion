@@ -6,6 +6,12 @@
                 <div class="loginbox-title">نظام حجز الطلبات</div>
 
 
+
+                @if(Session::has('message'))
+                    <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
+                @endif
+
+
                 <form method="POST" action="{{ route('PostRequest') }}">
                     @csrf
 
@@ -56,7 +62,7 @@
 
                                                 <div class="loginbox-textbox">
 
-<input id="date" type="date"    data-provide="datepicker" class="form-control" name="Requset_date"  required>
+<input  type="date"  class="form-control" name="Requset_date"  required>
 
 </div>
 
